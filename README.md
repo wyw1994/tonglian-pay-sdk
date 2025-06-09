@@ -3,7 +3,7 @@
 ## 安装
 
 ```bash
-composer require easeus/tonglian-pay-sdk
+composer require wyw1994/tonglian-pay-sdk
 ```
 
 ## 配置说明
