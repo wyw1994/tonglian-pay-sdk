@@ -112,8 +112,12 @@ class TonglianPay
             $params['signType'] = $this->config['sign_type'];
             //channelExtra，如果params中存在channelExtra，则将$this->config['channelExtra']合并到params中的channelExtra中，以params为准，优先以params为准
             //如果params中不存在channelExtra，则将$this->config['channelExtra']合并到params的channelExtra中
-            if (isset($params['channelExtra']) && is_array($params['channelExtra']) && $params['channelExtra']) {
-                $params['channelExtra'] = array_merge($this->config['channelExtra'] ?? [], $params['channelExtra']);
+            if (isset($params['channelExtra']) && is_array($params['channelExtra'])) {
+                if ($params['channelExtra']) {
+                    $params['channelExtra'] = array_merge($this->config['channelExtra'] ?? [], $params['channelExtra']);
+                } else {
+                    $params['channelExtra'] = [];
+                }
             } else {
                 $params['channelExtra'] = $this->config['channelExtra'] ?? [];
             }
@@ -454,7 +458,8 @@ class TonglianPay
         $requestParams = [
             'mchOrderNo' => $params['mchOrderNo'] ?? '',
             'payOrderId' => $params['payOrderId'] ?? '',
-            'busiType' => $params['busiType'] ?? '1'
+            'busiType' => $params['busiType'] ?? '1',
+            'channelExtra' => []
         ];
 
         try {
