@@ -1,0 +1,29 @@
+# IDE
+.idea/
+.vscode/
+*.sublime-*
+
+# Composer
+/vendor/
+composer.lock
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# Logs
+*.log
+logs/
+
+# Cache
+*.cache
+.cache/
+
+# System Files
+.DS_Store
+Thumbs.db 
+/examples/logs
+/examples/bills
+/.idea
+/vendor
