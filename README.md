@@ -55,10 +55,8 @@ $result = $pay->unifiedOrder($params);
 > - `PayWayCode::WX_NATIVE`：微信扫码支付
 > - `PayWayCode::WX_APP`：微信APP支付
 > - `PayWayCode::WX_H5`：微信H5支付
-> - `PayWayCode::ALIPAY_JSAPI`：支付宝JSAPI支付
-> - `PayWayCode::ALIPAY_NATIVE`：支付宝扫码支付
-> - `PayWayCode::ALIPAY_APP`：支付宝APP支付
-> - `PayWayCode::ALIPAY_H5`：支付宝H5支付
+> - `PayWayCode::ALI_JSAPI`：支付宝JSAPI支付
+> - `PayWayCode::ALI_QR`：支付宝扫码支付
 
 ### 2. 获取小程序链接
 
@@ -184,7 +182,7 @@ $pay->handleRefundNotify(function($data) {
     "state": "2",                           // 订单状态：2-支付成功
     "mchNo": "E2******073",              // 商户号
     "amount": "1",                          // 支付金额，单位分
-    "mchName": "成都易我科技开发有限责任公司", // 商户名称
+    "mchName": "XXXXXXX有限责任公司", // 商户名称
     "wayCode": "WX_LITE",                   // 支付方式
     "channelAcctType": "99",                // 渠道账户类型
     "expiredTime": "2025-06-04 15:35:00",   // 订单过期时间
